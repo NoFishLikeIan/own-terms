@@ -1,8 +1,25 @@
-import * as React from 'react';
-import { render } from 'react-dom';
+import * as React from 'react'
+import { render } from 'react-dom'
 
-const Application: React.FunctionComponent<{}> = () => (
-  <h1>Application</h1>
-);
+import { Main } from './components/main'
+import { Header } from './components/header'
 
-render(<Application />, document.getElementById('root'));
+import { useWindowDimensions } from './state/useWindowDimensions'
+
+
+const Application: React.FunctionComponent = () => {
+
+  const dimensions = useWindowDimensions()
+
+
+  return (
+    <div>
+      <div>
+        <Header dimensions={dimensions} />
+      </div>
+      <Main />
+    </div>
+  )
+}
+
+render(<Application />, document.getElementById('root'))
