@@ -1,9 +1,17 @@
-import * as React from 'react';
+import * as React from 'react'
+import { style } from '../constant'
 
-export const Main: React.FunctionComponent = () => {
-    return (
-      <div>
-        Hello!
-      </div>
-    )
-  }
+import { Dimensions } from "../state/useWindowDimensions"
+
+interface MainProps {
+  dimensions: Dimensions
+}
+
+export const Main: React.FunctionComponent<MainProps> = (props) => {
+
+  return (
+    <div style={{ ...props.dimensions, ...style }}>
+      Hello!
+    </div>
+  )
+}

@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { style } from '../constant'
 
 import { Dimensions } from "../state/useWindowDimensions"
 
@@ -8,11 +9,11 @@ interface HeaderProps {
 
 export const Header: React.FunctionComponent<HeaderProps> = (props) => {
 
-    const { dimensions: { width, height } } = props
+    const { dimensions } = props
 
     return (
-        <div style={{ height: height * 0.05, width, backgroundColor: "lightblue" }}>
-            Hi I am an header
+        <div style={{ ...dimensions, ...style }}>
+            Header.
         </div>
     )
 }
