@@ -4,8 +4,10 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
+    "@types/react-router": "^5.1.8",
     "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react-dom": "^16.8.6",
+    "react-router": "^5.2.0"
   },
   "devDependencies": {
     "@types/jest": "^24.0.11",
