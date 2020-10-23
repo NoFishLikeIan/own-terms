@@ -8,7 +8,7 @@ import { Dimensions } from "../../state/useWindowDimensions"
 interface BoidsProps extends Dimensions { }
 
 const R = 4
-const BOIDS = 50
+const BOIDS = 100
 
 
 export const Boids: React.FunctionComponent<BoidsProps> = (props) => {

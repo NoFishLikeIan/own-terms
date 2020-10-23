@@ -4,12 +4,17 @@ import { useRef, useEffect, useState } from 'react'
 
 import { colors } from '../constant'
 
-import { Dimensions } from "../state/useWindowDimensions"
+import { Dimensions } from '../state/useWindowDimensions'
 import { Boids } from './games/boids'
+import { Pages } from './get-content'
 import { ComponentProps } from './types'
 
 
-interface RightPanelProps extends ComponentProps { }
+
+
+interface RightPanelProps extends ComponentProps {
+    currentPage: Pages[number]
+}
 
 export const RightPanel: React.FunctionComponent<RightPanelProps> = (props) => {
 
@@ -29,6 +34,8 @@ export const RightPanel: React.FunctionComponent<RightPanelProps> = (props) => {
 
     }, [panelRef])
 
+    const Canvas = props.currentPage == "About" ? Boids : () => <div></div>
+
     return (
         <div
             style={{
@@ -40,7 +47,7 @@ export const RightPanel: React.FunctionComponent<RightPanelProps> = (props) => {
             }}
             ref={panelRef}
         >
-            <Boids width={panelDimensions?.width} height={panelDimensions?.height} />
+            <Canvas width={panelDimensions?.width} height={panelDimensions?.height} />
         </div>
     )
 }

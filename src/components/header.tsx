@@ -2,7 +2,7 @@ import * as React from 'react'
 
 import { CSSColor, style } from '../constant'
 
-import { Pages } from './content/get-content'
+import { Pages } from './get-content'
 import { Button } from './interaction/button'
 import { ComponentProps } from './types'
 

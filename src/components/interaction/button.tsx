@@ -2,7 +2,7 @@ import * as React from 'react'
 import { useState } from 'react'
 
 import { CSSColor } from '../../constant'
-import { Pages } from '../content/get-content'
+import { Pages } from '../get-content'
 import { HeaderProps } from '../header'
 
 export interface ButtonProps {

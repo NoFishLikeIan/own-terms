@@ -1,6 +1,6 @@
-import { About } from "./about"
-import { Fallback } from "./fallback"
-import { ContentComponent } from "./types"
+import { About } from "./content/about"
+import { Fallback } from "./content/fallback"
+import { ContentComponent } from "./content/types"
 
 export const PAGES = ["About", "Random", "Research"] as const
 export type Pages = typeof PAGES

@@ -9,7 +9,7 @@ import { Header } from './components/header'
 
 import { useWindowDimensions } from './state/useWindowDimensions'
 
-import { getContentComponent, PAGES, Pages } from './components/content/get-content'
+import { getContentComponent, PAGES, Pages } from './components/get-content'
 
 type Page = Pages[number]
 
@@ -31,7 +31,7 @@ const Application: React.FunctionComponent = () => {
         </LeftPanel>
       </div>
       <div style={{ height: "100%", width: "50%" }}>
-        <RightPanel />
+        <RightPanel currentPage={currentPage} />
       </div>
     </div>
   )
