@@ -4,13 +4,12 @@ import { CSSColor, style } from '../constant'
 
 import { Dimensions } from "../state/useWindowDimensions"
 import { Button } from './interaction/button'
+import { ComponentProps } from './types'
 
 const BUTTONS = ["Random junk", "About", "CV", "Research"]
 const B_COLORS: Array<CSSColor> = ["red", "orange", "green", "blue"]
 
-interface HeaderProps {
-    dimensions: Dimensions
-}
+interface HeaderProps extends ComponentProps { }
 
 const HEADER_STYLE: React.CSSProperties = {
     borderBottom: 0,
