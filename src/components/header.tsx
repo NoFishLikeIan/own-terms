@@ -6,7 +6,7 @@ import { Pages } from './get-content'
 import { Button } from './interaction/button'
 import { ComponentProps } from './types'
 
-const B_COLORS: Array<CSSColor> = ["red", "orange", "green", "blue"]
+const B_COLORS: Array<CSSColor> = ["red", "orange", "green", "lightblue"]
 
 export interface HeaderProps extends ComponentProps {
     pages: Pages,

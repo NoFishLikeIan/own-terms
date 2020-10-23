@@ -1,4 +1,5 @@
 import { About } from "./content/about"
+import { Contact } from "./content/contact"
 import { Fallback } from "./content/fallback"
 import { ContentComponent } from "./content/types"
 
@@ -11,6 +12,9 @@ export const getContentComponent: ((currentPage: Pages[number]) => ContentCompon
     switch (currentPage) {
         case "About":
             return About
+
+        case "Contact":
+            return Contact
 
         default:
             return Fallback

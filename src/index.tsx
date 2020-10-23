@@ -15,7 +15,7 @@ type Page = Pages[number]
 
 const Application: React.FunctionComponent = () => {
 
-  const [currentPage, setPage] = useState<Page>("About")
+  const [currentPage, setPage] = useState<Page>("Contact")
 
   const dimensions = useWindowDimensions()
   const { height, width } = dimensions

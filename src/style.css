@@ -30,3 +30,23 @@ a:active {
   color: lightblue;
   text-decoration: underline;
 }
+
+.contact {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  font-weight: bold;
+  border-style: solid;
+  border-color: gray;
+  background-color: rgb(218, 209, 176);
+}
+
+.copy {
+  background-color: rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  border-width: 1;
+}
+
+.copy:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
