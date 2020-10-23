@@ -3,4 +3,30 @@ body, html {
     width: 100%;
     margin: 0;
     font-family: 'Roboto', sans-serif;
+    font-size: large;
   }
+
+
+/* unvisited link */
+a:link {
+  color: black;
+  text-decoration: underline;
+}
+
+/* visited link */
+a:visited {
+  color: black;
+  text-decoration: underline;
+}
+
+/* mouse over link */
+a:hover {
+  color: lightblue;
+  text-decoration: none;
+}
+
+/* selected link */
+a:active {
+  color: lightblue;
+  text-decoration: underline;
+}
