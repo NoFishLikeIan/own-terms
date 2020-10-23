@@ -12,7 +12,8 @@ export const colors = {
 export const style = {
     backgroundColor: colors.lightYellow,
     borderWidth: 2,
-    borderStyle: "solid"
+    borderStyle: "solid",
+    borderColor: "gray"
 } as const
 
 

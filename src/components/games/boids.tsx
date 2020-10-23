@@ -64,7 +64,7 @@ export const Boids: React.FunctionComponent<BoidsProps> = (props) => {
                 flock.run()
 
                 context.clearRect(0, 0, dimensions.width, dimensions.height)
-                const R = 2
+
 
                 for (let i = 0; i < flock.boids.length; ++i) {
                     const boid = flock.boids[i]
@@ -79,6 +79,8 @@ export const Boids: React.FunctionComponent<BoidsProps> = (props) => {
                     context.moveTo(0, -R * 2)
                     context.lineTo(-R, R * 2)
                     context.lineTo(R, R * 2)
+                    context.fillStyle = "lightgray"
+                    context.fill()
                     context.closePath()
                     context.stroke()
                     context.restore()

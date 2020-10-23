@@ -2,7 +2,7 @@ import { About } from "./content/about"
 import { Fallback } from "./content/fallback"
 import { ContentComponent } from "./content/types"
 
-export const PAGES = ["About", "Random", "Research"] as const
+export const PAGES = ["About", "Random", "Research", "Contact"] as const
 export type Pages = typeof PAGES
 
 
