@@ -3,11 +3,11 @@ import { style } from '../constant'
 
 import { Dimensions } from "../state/useWindowDimensions"
 
-interface MainProps {
+interface LeftPanel {
   dimensions: Dimensions
 }
 
-export const Main: React.FunctionComponent<MainProps> = (props) => {
+export const LeftPanel: React.FunctionComponent<LeftPanel> = (props) => {
 
   return (
     <div style={{ ...props.dimensions, ...style }}>
