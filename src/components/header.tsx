@@ -2,14 +2,16 @@ import * as React from 'react'
 
 import { CSSColor, style } from '../constant'
 
-import { Dimensions } from "../state/useWindowDimensions"
+import { Pages } from './content/get-content'
 import { Button } from './interaction/button'
 import { ComponentProps } from './types'
 
-const BUTTONS = ["Random junk", "About", "CV", "Research"]
 const B_COLORS: Array<CSSColor> = ["red", "orange", "green", "blue"]
 
-interface HeaderProps extends ComponentProps { }
+export interface HeaderProps extends ComponentProps {
+    pages: Pages,
+    setPage: React.Dispatch<React.SetStateAction<string>>
+}
 
 const HEADER_STYLE: React.CSSProperties = {
     borderBottom: 0,
@@ -21,11 +23,11 @@ const HEADER_STYLE: React.CSSProperties = {
 
 export const Header: React.FunctionComponent<HeaderProps> = (props) => {
 
-    const { dimensions } = props
+    const { dimensions, pages, setPage } = props
 
     return (
         <div style={{ ...dimensions, ...style, ...HEADER_STYLE }}>
-            {BUTTONS.map((name, i) => <Button name={name} color={B_COLORS[i]} key={name} />)}
+            {pages.map((name, i) => <Button name={name} color={B_COLORS[i]} key={name} setPage={setPage} />)}
         </div>
     )
 }

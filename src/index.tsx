@@ -1,23 +1,34 @@
 import * as React from 'react'
 import { render } from 'react-dom'
 
+import { useState } from 'react'
+
 import { LeftPanel } from './components/left-panel'
 import { RightPanel } from './components/right-panel'
 import { Header } from './components/header'
 
 import { useWindowDimensions } from './state/useWindowDimensions'
-import { style } from './constant'
+
+import { getContentComponent, PAGES, Pages } from './components/content/get-content'
+
+type Page = Pages[number]
 
 const Application: React.FunctionComponent = () => {
+
+  const [currentPage, setPage] = useState<Page>("About")
 
   const dimensions = useWindowDimensions()
   const { height, width } = dimensions
 
+  const ContentPage = getContentComponent(currentPage)
+
   return (
     <div style={{ width, height, flex: 1, flexDirection: "row", display: "flex", textAlign: "center" }}>
       <div style={{ width: "50%", display: "flex", flexDirection: "column", margin: 4, padding: 2 }}>
-        <Header dimensions={{ height: "10%" }} />
-        <LeftPanel dimensions={{ height: "90%" }} />
+        <Header dimensions={{ height: "10%" }} pages={PAGES} setPage={setPage} />
+        <LeftPanel dimensions={{ height: "90%" }} >
+          <ContentPage />
+        </LeftPanel>
       </div>
       <div style={{ height: "100%", width: "50%" }}>
         <RightPanel />

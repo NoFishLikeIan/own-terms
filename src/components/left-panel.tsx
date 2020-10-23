@@ -9,8 +9,8 @@ interface LeftPanel extends ComponentProps { }
 export const LeftPanel: React.FunctionComponent<LeftPanel> = (props) => {
 
   return (
-    <div style={{ ...props.dimensions, ...style }}>
-      Hello!
+    <div style={{ ...props.dimensions, ...style, alignItems: "center", textAlign: "center" }}>
+      {props.children}
     </div>
   )
 }
