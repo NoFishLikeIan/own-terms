@@ -1,5 +1,10 @@
 import { useState, useEffect } from 'react'
 
+export interface Dimensions {
+    width?: number,
+    height?: number
+}
+
 export const getWindowDimensions = () => {
     const { innerHeight: height, innerWidth: width } = window
     return { width, height }
@@ -19,6 +24,3 @@ export function useWindowDimensions() {
 
     return windowDim
 }
-
-
-export type Dimensions = ReturnType<typeof getWindowDimensions>;

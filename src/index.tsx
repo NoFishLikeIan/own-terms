@@ -1,35 +1,37 @@
 import * as React from 'react'
 import { render } from 'react-dom'
 
-import { style } from './constant'
-
-import { Main } from './components/main'
+import { LeftPanel } from './components/left-panel'
+import { RightPanel } from './components/right-panel'
 import { Header } from './components/header'
 
 import { useWindowDimensions } from './state/useWindowDimensions'
+import { style } from './constant'
 
 const H = .05
-
-const DEF_SIZE = {
-  height: '100%',
-  left: '0px',
-  width: '100%',
-  overflow: 'hidden'
-}
 
 const Application: React.FunctionComponent = () => {
 
   const dimensions = useWindowDimensions()
   const { height, width } = dimensions
 
-  // FIXME: Height doesn't work! Miss Fugaro :(
-  const headerDim = { height: height * H, width: width * .5 }
-  const mainDim = { height: height * (0.95 - H), width: width * .5 }
+  const netHeight = height - 2 * style.borderWidth
+
+
+  const headerH = netHeight * H
+  const leftPanelH = netHeight * (1 - H)
+  const totalH = headerH + leftPanelH
+
 
   return (
-    <div style={{ ...DEF_SIZE, backgroundColor: style.backgroundColor }}>
-      <Header dimensions={headerDim} />
-      <Main dimensions={mainDim} />
+    <div style={{ width: "100%", height: netHeight, flex: 1, flexDirection: "row", display: "flex" }}>
+      <div style={{ width: "50%", height: totalH }}>
+        <Header dimensions={{ height: headerH }} />
+        <LeftPanel dimensions={{ height: leftPanelH }} />
+      </div>
+      <div style={{ width: "50%", height: totalH }}>
+        <RightPanel />
+      </div>
     </div>
   )
 }
