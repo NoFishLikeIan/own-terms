@@ -3,10 +3,10 @@ import * as React from 'react'
 import { CSSColor, style } from '../constant'
 
 import { Dimensions } from "../state/useWindowDimensions"
-import { Button } from './button'
+import { Button } from './interaction/button'
 
-const BUTTONS = ["Random junk", "About", "CV", "Research", "Sexual preferences"]
-const B_COLORS: Array<CSSColor> = ["red", "black", "green", "blue", "aquamarine"]
+const BUTTONS = ["Random junk", "About", "CV", "Research"]
+const B_COLORS: Array<CSSColor> = ["red", "orange", "green", "blue"]
 
 interface HeaderProps {
     dimensions: Dimensions
