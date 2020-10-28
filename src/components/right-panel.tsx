@@ -1,24 +1,28 @@
-import { padEnd } from 'lodash'
 import * as React from 'react'
 import { useRef, useEffect, useState } from 'react'
-
-import { colors } from '../constant'
+import { useLocation } from 'react-router-dom'
 
 import { Dimensions } from '../state/useWindowDimensions'
 import { Boids } from './games/boids'
 import { Pages } from './get-content'
 import { ComponentProps } from './types'
 
+import { colors } from '../constant'
 
-
-
-interface RightPanelProps extends ComponentProps {
-    currentPage: Pages[number]
+interface LocationState {
+    from: {
+        pathname: string
+    }
 }
+
+
+interface RightPanelProps extends ComponentProps { }
 
 export const RightPanel: React.FunctionComponent<RightPanelProps> = (props) => {
 
     const [panelDimensions, setDimensions] = useState<Dimensions>()
+
+    const location = useLocation<LocationState>()
 
     const panelRef = useRef<HTMLDivElement>(null)
     const dimensions = { height: "100%", width: "100%", ...props.dimensions }
@@ -26,15 +30,16 @@ export const RightPanel: React.FunctionComponent<RightPanelProps> = (props) => {
     useEffect(() => {
         // TODO: Should update at window resizes
         if (panelRef.current) {
-            const height = panelRef.current.offsetHeight
-            const width = panelRef.current.offsetWidth
+
+            const { offsetHeight: height, offsetWidth: width } = panelRef.current
 
             setDimensions({ height, width })
         }
 
     }, [panelRef])
 
-    const Canvas = props.currentPage == "About" ? Boids : () => <div></div>
+
+    const Canvas = location.pathname == "/about" ? Boids : () => <div></div>
 
     return (
         <div
