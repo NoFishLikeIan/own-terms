@@ -6,11 +6,13 @@
   "dependencies": {
     "@types/lodash": "^4.14.162",
     "@types/react-router": "^5.1.8",
+    "@types/react-router-dom": "^5.1.6",
     "boids-ts": "^0.0.0",
     "lodash": "^4.17.20",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-router": "^5.2.0"
+    "react-router": "^5.2.0",
+    "react-router-dom": "^5.2.0"
   },
   "devDependencies": {
     "@types/jest": "^24.0.11",

@@ -1,4 +1,3 @@
-import { curry } from 'lodash'
 import * as React from 'react'
 import { ContentProps } from './types'
 
